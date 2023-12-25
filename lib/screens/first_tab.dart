@@ -21,6 +21,7 @@ class _HomePageState extends State<FirstTab> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 30),
             Text(
               'GALERI ADAN',
               style: TextStyle(fontSize: 24, color: Colors.white),
@@ -29,7 +30,7 @@ class _HomePageState extends State<FirstTab> {
               height: 10,
             ),
             logoWidget("lib/assets/images/adan.jpg"),
-            SizedBox(height: 10), // Adding some space between the text and the buttons
+            SizedBox(height: 10), 
           ],
         ),
       )
