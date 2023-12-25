@@ -3,6 +3,7 @@ import 'package:dicoding/screens/signin.dart';
 import 'package:dicoding/util/reuseable_widgets.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SecondTab extends StatelessWidget {
   static var _username = "username";
 
@@ -15,32 +16,36 @@ class SecondTab extends StatelessWidget {
     return Scaffold(
         // backgroundColor: Color.fromARGB(255, 244, 232, 193),
         backgroundColor: Colors.blue.shade300,
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(
-                  20, MediaQuery.of(context).size.height * 0.005, 20, 0),
+        body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+         child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                 SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+                ),  
                 Container(
                   child:      Icon(Icons.account_circle_outlined,color: Colors.white,size: 90,),
                       ),
-                   const SizedBox(
-                  height: 20,
-                ),
+                   SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+                ),  
               Container(
                 margin: EdgeInsets.only(top: 10.0),
                 child: Text(_username),
               ),  
               Container(
                   child: Column(children: <Widget>[
-                const SizedBox(
-                  height: 20,
-                ),
+                SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+                ),  
                 reusableTextField("Enter Username", Icons.person, false,
                     _usernameTextController),
-                const SizedBox(
-                  height: 20,
-                ),
+                SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+                ),  
                 ElevatedButton(
                   onPressed: () {
                     _username = _usernameTextController.text;
@@ -68,9 +73,9 @@ class SecondTab extends StatelessWidget {
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30)))),
                 ),
-                 const SizedBox(
-                  height: 20,
-                ),
+                SizedBox(
+              height: MediaQuery.of(context).size.height * 0.05,
+                ),  
                 ElevatedButton(
                           child: Text("Logout"),
                           onPressed: () {
@@ -80,6 +85,6 @@ class SecondTab extends StatelessWidget {
                                   MaterialPageRoute(
                                       builder: (context) => SignInScreen()));
   }})]))
-            ]))); // ElevatedButton
+            ])))); // ElevatedButton
   }
 }
